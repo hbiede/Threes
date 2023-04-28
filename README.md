@@ -118,7 +118,7 @@ Loads the provided [immediate value](#immediates) to the top of the stack
 
 #### Comment - `33`
 
-Anything following this command is treated as a comment and is ignored by the compiler (yes, even normal words 😱)
+Anything following this command is treated as a comment and is ignored by the interpreter (yes, even normal words 😱)
 
 ## Immediates
 
