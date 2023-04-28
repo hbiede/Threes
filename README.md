@@ -1,8 +1,9 @@
-# Threes
+<p align="center">
+  <img src="./logo.png" alt="Threes Logo" height=300 />
+  <h1 align="center">Threes</h1>
+</p>
 
 Threes is a novelty programming language that operates as a stack-based reduced instruction set language.
-
-<img src="./logo.png" alt="Threes Logo" height=300>
 
 ## Syntax
 
