@@ -174,12 +174,16 @@ class DuplicateCommand(Command):
         return ptr + 1
 
 
-class SwapCommand(Command):
+class SwapCommand(ImmediateCommand):
+    def __init__(self, line: int, immediate: int = 2):
+        super(SwapCommand, self).__init__(line, immediate)
+
     def run(self, stack: List[int], ptr: int):
-        first = stack.pop()
-        second = stack.pop()
-        stack.append(first)
-        stack.append(second)
+        temp = []
+        for _ in range(self.immediate):
+            temp.append(stack.pop())
+        for x in temp:
+            stack.append(x)
         return ptr + 1
 
 
@@ -231,7 +235,7 @@ def parse(source) -> List[Command]:
         elif command == '22':
             commands.append(DuplicateCommand(line_number))
         elif command == '23':
-            commands.append(SwapCommand(line_number))
+            commands.append(SwapCommand(line_number, parse_arg(args, line_number) if len(args) > 0  else 2))
         elif command == '30':
             commands.append(PrintCharacterCommand(line_number))
         elif command == '31':

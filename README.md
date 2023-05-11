@@ -107,7 +107,8 @@ Duplicates the top value in the stack
 
 #### Swap - `23`
 
-Swaps the top two values in the stack
+Swaps the top values in the stack. Optionally takes a provided [line count](#immediates), which informs the command how
+many lines to swap (default two).
 
 ### Load Value
 
