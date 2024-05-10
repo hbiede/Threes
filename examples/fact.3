@@ -1,0 +1,14 @@
+3211      33 Load immediate 1  (initialize factorial value)
+32111     33 Load immediate 5  (initialize n)
+
+33 Loop to compute factorial
+
+22        33 Duplicate current n
+2313      33 Flip the stack to multiply
+02        33 Stack multiplication: factorial *= n
+23        33 Swap the top two values in the stack (swap n and factorial)
+1111      33 Subtract 1 from n
+22        33 Duplicate to check value
+21112     33 Jump to line 06 if n is non-empty and non-zero (repeat loop)
+23        33 Swap the top two values in the stack (swap n and factorial)
+20        33 Print the factorial value
