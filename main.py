@@ -187,6 +187,11 @@ class SwapCommand(ImmediateCommand):
         return ptr + 1
 
 
+class NoOpCommand(Command):
+    def run(self, stack: List[int], ptr):
+        return ptr + 1
+
+
 def parse_arg(arg: str, line: int) -> int:
     if len(arg) == 0:
         raise ParseException('Empty argument', line)
@@ -210,7 +215,8 @@ def parse(source) -> List[Command]:
     commands = []
     for i, line in enumerate(lines):
         line_number = i + 1
-        trimmed_line = re.sub(r'\s+', '', line)
+        comment_stripped_line = re.sub(r'\s+33.*$', '', line)
+        trimmed_line = re.sub(r'\s+', '', comment_stripped_line)
         command, args = trimmed_line[:2], trimmed_line[2:]
         if command == '00':
             commands.append(AddCommand(line_number))
@@ -242,9 +248,8 @@ def parse(source) -> List[Command]:
             commands.append(JumpIfNotCommand(line_number, parse_arg(args, line_number)))
         elif command == '32':
             commands.append(LoadImmCommand(line_number, parse_arg(args, line_number)))
-        elif command == '33':
-            # Comments
-            pass
+        else:
+            commands.append(NoOpCommand(line_number))
     return commands
 
 

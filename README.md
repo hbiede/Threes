@@ -12,25 +12,25 @@ All source code written in Threes are written using only the following character
 Example: the following code prints "Hello, World!" to the console
 
 ```
-321201
-3211210
-3211230
-3211302
-3211233
-3211313
-321200
-321230
-3211233
-3211230
-3211230
-3211211
-3211020
-32131
-23
-30
-1111
-22
-21133
+321201    33 Load !
+3211210   33 Load d
+3211230   33 Load l
+3211302   33 Load r
+3211233   33 Load o
+3211313   33 Load w
+321200    33 Load space
+321230    33 Load comma
+3211233   33 Load o
+3211230   33 Load l
+3211230   33 Load l
+3211211   33 Load e
+3211020   33 Load H
+32131     33 Set loop counter
+23        33 Swap
+30        33 Print
+1111      33 Decrement loop counter
+22        33 Duplicate loop counter
+21133     33 Jump to print
 ```
 
 ## Commands
